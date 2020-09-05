@@ -1,8 +1,20 @@
-<mat-toolbar>Contato</mat-toolbar>
+<mat-toolbar>
+    <mat-icon>account_circle</mat-icon>
+    Contato
+</mat-toolbar>
 
 <mat-tab-group>
-    <mat-tab label="Todos"></mat-tab>
-    <mat-tab label="Novo">
+    <mat-tab label="Todos">
+        <ng-template mat-tab-label>
+            <mat-icon>list</mat-icon>
+                Todos
+        </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>contact_mail</mat-icon>
+                Novo
+        </ng-template>
         <mat-card class="half-width">    
             <mat-card-title>Novo Contato</mat-card-title>    
               <form [formGroup] = "formulario" (ngSubmit)="submit()">
