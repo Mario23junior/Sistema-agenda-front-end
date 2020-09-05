@@ -12,7 +12,8 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms'
 export class ContatoComponent implements OnInit {
        
       formulario: FormGroup;
-      contato: Contato[] = [];
+      contatos: Contato[] = [];
+      colunas = ["id", "nome", "email" ,"favorito"];
 
   constructor(
     private service : ContatoService,
@@ -31,8 +32,8 @@ export class ContatoComponent implements OnInit {
        const formValues = this.formulario.value;
        const contato : Contato = new Contato(formValues.nome, formValues.email);
        this.service.save(contato).subscribe( resposta  => {
-          this.contato.push(resposta);
-          console.log(this.contato);
+          this.contatos.push(resposta);
+          console.log(this.contatos);
        })
      }
 
